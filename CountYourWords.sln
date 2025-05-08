@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountYourWords.Console", "CountYourWords.Console\CountYourWords.Console.csproj", "{618221A4-C016-42A8-927F-FEEF0B5222A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountYourWords.Application", "CountYourWords.Application\CountYourWords.Application.csproj", "{5788FD13-59C0-4EA5-A940-335B7C0BA075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountYourWords.Console.Tests", "CountYourWords.Console.Tests\CountYourWords.Console.Tests.csproj", "{8F46D4C5-EC63-4240-8344-14AD51706DF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountYourWords.Application.Tests", "CountYourWords.Application.Tests\CountYourWords.Application.Tests.csproj", "{1A5603D9-1683-456D-8B12-5CA83009F9AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,19 @@ Global
 		{618221A4-C016-42A8-927F-FEEF0B5222A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{618221A4-C016-42A8-927F-FEEF0B5222A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{618221A4-C016-42A8-927F-FEEF0B5222A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5788FD13-59C0-4EA5-A940-335B7C0BA075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5788FD13-59C0-4EA5-A940-335B7C0BA075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5788FD13-59C0-4EA5-A940-335B7C0BA075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5788FD13-59C0-4EA5-A940-335B7C0BA075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F46D4C5-EC63-4240-8344-14AD51706DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F46D4C5-EC63-4240-8344-14AD51706DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F46D4C5-EC63-4240-8344-14AD51706DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F46D4C5-EC63-4240-8344-14AD51706DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5603D9-1683-456D-8B12-5CA83009F9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5603D9-1683-456D-8B12-5CA83009F9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5603D9-1683-456D-8B12-5CA83009F9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5603D9-1683-456D-8B12-5CA83009F9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

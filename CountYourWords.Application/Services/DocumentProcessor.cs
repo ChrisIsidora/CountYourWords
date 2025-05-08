@@ -15,7 +15,7 @@ public class DocumentProcessor : IDocumentProcessor
             .Select(g => new WordOccurrence(g.Key, g.Count()))
             .ToList();
         
-        result.Sort();
+        result.Sort(new WordOccurrenceComparer());
         
         return new ProcessedDocument(result);
     }

@@ -7,6 +7,6 @@ public class ScrambleService : IScrambleService
     public string Scramble(string stringContent)
     {
         return string.Join(string.Empty,
-            stringContent.Reverse().Select((c, i) => i % 2 == 0 ? char.ToUpper(c) : char.ToLower(c)));
+            stringContent.Reverse().Select((c, i) => i % 2 == 0 ? char.ToLower(c) : char.ToUpper(c)));
     }
 }

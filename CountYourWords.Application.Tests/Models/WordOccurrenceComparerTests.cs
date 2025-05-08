@@ -4,31 +4,35 @@ namespace CountYourWords.Application.Tests.Models;
 
 public class WordOccurrenceComparerTests
 {
-    [Fact]
-    public void Compare_ShouldReturnNegativeOne_WhenCurrentIsBeforeOther()
+    [Theory]
+    [InlineData("apple", "banana")]
+    [InlineData(null, "apple")]
+    public void Compare_ShouldReturnNegativeOne_WhenXIsBeforeY(string? xValue, string yValue)
     {
         // Arrange
         var comparer = new WordOccurrenceComparer();
-        var current = new WordOccurrence("apple", 1);
-        var other = new WordOccurrence("banana", 1);
+        var x = xValue == null ? null : new WordOccurrence(xValue, 1);
+        var y = new WordOccurrence(yValue, 1);
 
         // Act
-        int result = comparer.Compare(current, other);
+        int result = comparer.Compare(x, y);
 
         // Assert
         Assert.True(result < 0);
     }
 
-    [Fact]
-    public void Compare_ShouldReturnPositiveOne_WhenCurrentIsAfterOther()
+    [Theory]
+    [InlineData("banana", "apple")]
+    [InlineData("apple", null)]
+    public void Compare_ShouldReturnPositiveOne_WhenXIsAfterY(string xValue, string? yValue)
     {
         // Arrange
         var comparer = new WordOccurrenceComparer();
-        var current = new WordOccurrence("banana", 1);
-        var other = new WordOccurrence("apple", 1);
+        var x =  new WordOccurrence(xValue, 1);
+        var y = yValue == null ? null : new WordOccurrence(yValue, 1);
 
         // Act
-        int result = comparer.Compare(current, other);
+        int result = comparer.Compare(x, y);
 
         // Assert
         Assert.True(result > 0);
@@ -36,48 +40,19 @@ public class WordOccurrenceComparerTests
 
     [Theory]
     [InlineData("apple", "apple")]
-    [InlineData("app", "apple")]
-    public void Compare_ShouldReturnZero_WhenCurrentAndOtherAreSame_OrAlreadyInOrder(string currentWord, string otherWord)
+    [InlineData("app","apple")]
+    [InlineData(null, null)]
+    public void Compare_ShouldReturnZero_WhenXAndYAreSame(string? xValue, string? yValue)
     {
         // Arrange
         var comparer = new WordOccurrenceComparer();
-        var current = new WordOccurrence(currentWord, 1);
-        var other = new WordOccurrence(otherWord, 1);
+        var x = xValue == null ? null : new WordOccurrence("apple", 1);
+        var y = yValue == null ? null :new WordOccurrence("apple", 1);
 
         // Act
-        int result = comparer.Compare(current, other);
+        int result = comparer.Compare(x, y);
 
         // Assert
         Assert.Equal(0, result);
-    }
-
-    [Fact]
-    public void Compare_ShouldReturnNegativeOne_WhenCurrentIsNull()
-    {
-        // Arrange
-        var comparer = new WordOccurrenceComparer();
-        WordOccurrence? current = null;
-        var other = new WordOccurrence("apple", 1);
-
-        // Act
-        int result = comparer.Compare(current, other);
-
-        // Assert
-        Assert.True(result < 0);
-    }
-
-    [Fact]
-    public void Compare_ShouldReturnPositiveOne_WhenOtherIsNull()
-    {
-        // Arrange
-        var comparer = new WordOccurrenceComparer();
-        var current = new WordOccurrence("apple", 1);
-        WordOccurrence? other = null;
-
-        // Act
-        int result = comparer.Compare(current, other);
-
-        // Assert
-        Assert.True(result > 0);
     }
 }

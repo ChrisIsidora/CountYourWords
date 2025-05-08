@@ -10,7 +10,7 @@ public class CountYourWordsWorkerServiceTests
     [Fact]
     public void Constructor_ShouldThrowArgumentNullException_WhenDependenciesAreNull()
     {
-        // Arrange & Act & Assert
+        // Assert
         Assert.Throws<ArgumentNullException>(() => new CountYourWordsWorkerService(null, new Mock<IDocumentProcessor>().Object));
         Assert.Throws<ArgumentNullException>(() => new CountYourWordsWorkerService(new Mock<IDocumentProvider>().Object, null));
     }

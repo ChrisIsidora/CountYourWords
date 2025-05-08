@@ -3,7 +3,7 @@ using CountYourWords.Application.Models;
 
 namespace CountYourWords.Console.Services;
 
-public class CountYourWordsService(IDocumentProvider documentProvider, IDocumentProcessor documentProcessor)
+public class CountYourWordsWorkerService(IDocumentProvider documentProvider, IDocumentProcessor documentProcessor)
 {
     private readonly IDocumentProvider _documentProvider = documentProvider ?? throw new ArgumentNullException(nameof(documentProvider));
     private readonly IDocumentProcessor _documentProcessor = documentProcessor ?? throw new ArgumentNullException(nameof(documentProcessor));
