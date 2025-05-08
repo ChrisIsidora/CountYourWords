@@ -15,5 +15,11 @@
     <ItemGroup>
       <ProjectReference Include="..\CountYourWords.Application\CountYourWords.Application.csproj" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <Content Include="input.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
 
 </Project>

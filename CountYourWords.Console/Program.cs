@@ -11,11 +11,12 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
 // Build Services
 builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
+builder.Services.AddSingleton<IListProcessor, ListProcessor>();
 builder.Services.AddSingleton<IDocumentProvider, DocumentProvider>();
 builder.Services.AddSingleton<IScrambleService, ScrambleService>();
 builder.Services.AddSingleton<IDocumentProcessor, ScrambledDocumentProcessorDecorator>(provider =>
 {
-    var documentProcessor = new DocumentProcessor();
+    var documentProcessor = new DocumentProcessor(provider.GetRequiredService<IListProcessor>());
     var scrambleService = provider.GetRequiredService<IScrambleService>();
     return new ScrambledDocumentProcessorDecorator(documentProcessor, scrambleService);
 });
